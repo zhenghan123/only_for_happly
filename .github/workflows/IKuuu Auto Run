@@ -1,0 +1,22 @@
+name: 'IKuuu Auto Run'
+on:
+  schedule:
+  - cron: '30 5 * * *'
+  workflow_dispatch:
+
+jobs:
+  ikuuu_run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout codes
+      uses: actions/checkout@v2
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10
+    - name: IKuuu Signin
+      env:
+        IKUUU_ACCOUNT: ${{ secrets.IKUUU_ACCOUNT }}
+      run: |
+        pip install requests notify # 根据实际情况安装依赖，这里假设是 requests 和 notify
+        python ikuuu.py
