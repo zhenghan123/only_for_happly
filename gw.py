@@ -10,7 +10,8 @@
 import requests
 import os
 import notify
-
+import sys
+import json as son
 '''
 export gw='邮箱&密码' 多账号#号割开   机场注册地址https://balala.io/auth/register?code=dnL6
 '''
