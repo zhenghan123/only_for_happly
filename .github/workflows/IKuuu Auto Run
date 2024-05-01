@@ -19,4 +19,4 @@ jobs:
         IKUUU_ACCOUNT: ${{ secrets.IKUUU_ACCOUNT }}
       run: |
         pip install requests notify # 根据实际情况安装依赖，这里假设是 requests 和 notify
-        python ikuuu.py
+        python ikuuu2.py
