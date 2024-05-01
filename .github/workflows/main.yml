@@ -29,10 +29,10 @@ jobs:
 
         
 
-      # - name: Install dependencies
-      #   run: pip install pycryptodome
-      # - name: Run script
-      #   env:
-      #    mi_account: '17637011017'
-      #    mi_password: '2015xiaoxin.'
-      #   run: python miui.py 
+      - name: Install dependencies
+        run: pip install pycryptodome
+      - name: Run script
+        env:
+         mi_account: '17637011017'
+         mi_password: '2015xiaoxin.'
+        run: python miui.py 
