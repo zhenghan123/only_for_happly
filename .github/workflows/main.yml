@@ -21,11 +21,18 @@ jobs:
         env:
          ikuuu: '3209144611@qq.com&2015xiaoxin.'
         run: python ikuuu2.py  # 你需要根据你实际情况替换 <your_script>
-
-      - name: Install dependencies
-        run: pip install pycryptodome
       - name: Run script
         env:
-         mi_account: '17637011017'
-         mi_password: '2015xiaoxin.'
-        run: python miui.py 
+         gw: '645934926@qq.com&2015xiaoxin.'
+        run: python gw.py  # 你需要根据你实际情况替换 <your_script>
+
+
+        
+
+      # - name: Install dependencies
+      #   run: pip install pycryptodome
+      # - name: Run script
+      #   env:
+      #    mi_account: '17637011017'
+      #    mi_password: '2015xiaoxin.'
+      #   run: python miui.py 
