@@ -1,26 +1,20 @@
-name: Github Workflow
-
-on:
-  schedule:
-    - cron: '0 1 * * 1-5' # 每周一至周五 01:00 UTC触发工作流
+name: Python application
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-    name: Run script
+
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    
+    - uses: actions/checkout@v2
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-    
-    - name: Install Dependencies
+    - name: Run tests
       run: |
-        python -m pip install --upgrade pip
-        pip install requests  # 如果有其他的依赖库，请在此处安装依赖库
-        
-    - name: Execute script
-      run: python your_script.py  # 保证`your_script.py`是你仓库中根目录下的Python脚本名
+        python ikuuu2.py
