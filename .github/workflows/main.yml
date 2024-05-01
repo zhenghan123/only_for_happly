@@ -19,5 +19,5 @@ jobs:
         run: pip install requests  # 根据你的实际情况添加需要的依赖
       - name: Run script
         env:
-         ikuuu: '645934926@qq.com&2015xiaoxin.'
+         ikuuu: '3209144611@qq.com&2015xiaoxin.'
         run: python ikuuu2.py  # 你需要根据你实际情况替换 <your_script>
