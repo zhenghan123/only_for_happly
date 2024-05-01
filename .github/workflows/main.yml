@@ -1,11 +1,11 @@
-name: Ikuuu Check-in
+name: Github Workflow
 
 on:
   schedule:
-    - cron: '30 5 * * *' # Run job every day at 05:30 UTC
+    - cron: '0 1 * * 1-5' # 每周一至周五 01:00 UTC触发工作流
 
 jobs:
-  checkin:
+  build:
     name: Run script
     runs-on: ubuntu-latest
     steps:
@@ -20,10 +20,7 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests notify
-
-    - name: Run Script
-      env:
-        ikuuu: ${{ secrets.IKUUU }}
-      run: |
-        python ikuuu2.py
+        pip install requests  # 如果有其他的依赖库，请在此处安装依赖库
+        
+    - name: Execute script
+      run: python your_script.py  # 保证`your_script.py`是你仓库中根目录下的Python脚本名
