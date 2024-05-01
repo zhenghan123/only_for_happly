@@ -21,3 +21,8 @@ jobs:
         env:
          ikuuu: '3209144611@qq.com&2015xiaoxin.'
         run: python ikuuu2.py  # 你需要根据你实际情况替换 <your_script>
+      - name: Run script
+        env:
+         USERNAME: ${{ secrets.MI_ACCOUNT }}
+         PASSWORD: ${{ secrets.MI_PASSWORD }}
+        run: python miui.py 
