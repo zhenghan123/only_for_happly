@@ -26,6 +26,6 @@ jobs:
         run: pip install pycryptodome
       - name: Run script
         env:
-         USERNAME: ${{ secrets.MI_ACCOUNT }}
-         PASSWORD: ${{ secrets.MI_PASSWORD }}
+         mi_account: ${{ secrets.MI_ACCOUNT }}
+         mi_password: ${{ secrets.MI_PASSWORD }}
         run: python miui.py 
