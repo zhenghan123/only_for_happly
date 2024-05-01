@@ -1,0 +1,21 @@
+name: 'Automated script run'
+on:
+  schedule:
+    - cron: '8 9 * * *'  # 这会每分钟运行一次，你需要根据你的需求修改这个 cron 语句
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  script_run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: pip install requests  # 根据你的实际情况添加需要的依赖
+      - name: Run script
+        run: python ikuuu2.py  # 你需要根据你实际情况替换 <your_script>
