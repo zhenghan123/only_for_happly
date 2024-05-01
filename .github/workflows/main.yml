@@ -26,4 +26,4 @@ jobs:
       env:
         ikuuu: ${{ secrets.IKUUU }}
       run: |
-        python your_script.py
+        python ikuuu2.py
