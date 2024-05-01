@@ -8,7 +8,8 @@
 # const $ = new Env('喜马拉雅转盘抽奖')
 
 import requests, json, time ,os
-
+import sys
+import json as son
 # 写的是喜马拉雅每日十连抽 十连抽一次抓包https://m.ximalaya.com/x-web-activity/draw/activity/drawTenAction这个域名的cookie
 # 青龙变量 xmly_cookie
 xmly_cookie = os.getenv("xmly_cookie").split('#')
