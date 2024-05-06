@@ -101,7 +101,10 @@ def Phone(account, password):
     else:
         print("Key 'ssecurity' does not exist")
 # 这里假设其他的代码继续
-    nonce = Auth["nonce"]
+    if "nonce" in Auth:
+        nonce = Auth["nonce"]
+    else:
+        print("Key 'nonce' does not exist")
     sha1 = hashlib.sha1()
     Str = "nonce=" + str(nonce) + "&" + ssecurity
     sha1.update(Str.encode("utf-8"))
