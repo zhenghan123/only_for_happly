@@ -65,7 +65,18 @@ def rsa_encrypt(key, data):
     ciphertext = cipher.encrypt(base64.b64encode(data.encode('utf-8')))
     return base64.b64encode(ciphertext).decode('utf-8')
 
-
+def Phone(account, password):
+    md5 = hashlib.md5()
+    ...
+    Auth1 = requests.post(url=url, headers=headers, data=data).text.replace("&&&START&&&", "")
+    Auth = json.loads(Auth1)
+    
+    if "ssecurity" not in Auth:
+        print(f'Error: ssecurity not found in response. Full response: {Auth}')
+        return None
+    
+    ssecurity = Auth["ssecurity"]
+    ...
 # 获取cookie
 def Phone(account, password):
     md5 = hashlib.md5()
