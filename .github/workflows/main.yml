@@ -2,7 +2,7 @@ name: 'Automated script run'
 on:
   schedule:
     - cron:  '59 23 * * *' # 每日23:59运行
-    - cron: '0 0 6,8,20 * * *' # 在每个月的6号，8号和20号的00:00运行
+    # - cron: '0 0 6,8,20 * * *' # 在每个月的6号，8号和20号的00:00运行
     # - cron:  '59 23 * * *'  
     # - cron "0 0 6,8,20 * * *" script-path=yysign.py
     #,tag=匹配cron用
