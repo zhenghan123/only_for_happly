@@ -96,6 +96,10 @@ def Phone(account, password):
     Auth1 = requests.post(url=url, headers=headers,
                           data=data).text.replace("&&&START&&&", "")
     Auth = json.loads(Auth1)
+    if "ssecurity" in Auth:
+    ssecurity = Auth["ssecurity"]
+    else:
+    print("Key 'ssecurity' does not exist")
     ssecurity = Auth["ssecurity"]
     nonce = Auth["nonce"]
     sha1 = hashlib.sha1()
