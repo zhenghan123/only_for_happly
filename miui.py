@@ -65,18 +65,7 @@ def rsa_encrypt(key, data):
     ciphertext = cipher.encrypt(base64.b64encode(data.encode('utf-8')))
     return base64.b64encode(ciphertext).decode('utf-8')
 
-def Phone(account, password):
-    md5 = hashlib.md5()
-    ...
-    Auth1 = requests.post(url=url, headers=headers, data=data).text.replace("&&&START&&&", "")
-    Auth = json.loads(Auth1)
-    
-    if "ssecurity" not in Auth:
-        print(f'Error: ssecurity not found in response. Full response: {Auth}')
-        return None
-    
-    ssecurity = Auth["ssecurity"]
-    ...
+
 # 获取cookie
 def Phone(account, password):
     md5 = hashlib.md5()
@@ -86,7 +75,7 @@ def Phone(account, password):
     headers = {
         "Content-Type": "application/x-www-form-urlencoded",
         "User-Agent":
-            "Dalvik/2.1.0 (Linux; U; Android 12; M2007J17C Build/SKQ1.211006.001) APP/xiaomi.vipaccount APPV/220301 MK/UmVkbWkgTm90ZSA5IFBybw== PassportSDK/3.7.8 passport-ui/3.7.8",
+            "Dalvik/2.1.0 (Linux; U; Android 12; M2007J17C Build/SKQ1.211006.001) APP/xiaomi.vipaccount APPV/220301 MK/UmVkbWkgTm90ZSA5IFBybw== PassportSDK/3
         "Cookie":
             "deviceId=X0jMu7b0w-jcne-S; pass_o=2d25bb648d023d7f; sdkVersion=accountsdk-2020.01.09",
         "Host": "account.xiaomi.com",
