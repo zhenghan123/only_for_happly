@@ -97,10 +97,10 @@ def Phone(account, password):
                           data=data).text.replace("&&&START&&&", "")
     Auth = json.loads(Auth1)
     if "ssecurity" in Auth:
-    ssecurity = Auth["ssecurity"]
+        ssecurity = Auth["ssecurity"]
     else:
-    print("Key 'ssecurity' does not exist")
-    ssecurity = Auth["ssecurity"]
+        print("Key 'ssecurity' does not exist")
+# 这里假设其他的代码继续
     nonce = Auth["nonce"]
     sha1 = hashlib.sha1()
     Str = "nonce=" + str(nonce) + "&" + ssecurity
