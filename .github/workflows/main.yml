@@ -21,30 +21,31 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests  # 根据你的实际情况添加需要的依赖
-      # - name: Run script
-      #   env:
-      #    ikuuu: ${{ secrets.IKUUU }}
-      #   run: python ikuuu2.py  # 你需要根据你实际情况替换 <your_script>
+        
+      - name: Run script
+        env:
+         ikuuu: ${{ secrets.IKUUU }}
+        run: python ikuuu2.py  # 你需要根据你实际情况替换 <your_script>
       
       # - name: Run script
       #   env:
       #    gw: '3209144611&2015xiaoxin.'
       #   run: python gw.py  # 你需要根据你实际情况替换 <your_script>
       
-      # - name: Run script
-      #   env:
-      #    yyusername: ${{ secrets.YYUSERNAME }}
-      #    yypassword: ${{ secrets.YYPASSWORD }}
-        
-      #   run: python yysign.py  # 你需要根据你实际情况替换 <your_script>
-
-
-        
-
-      - name: Install dependencies
-        run: pip install pycryptodome
       - name: Run script
         env:
-         mi_account: ${{ secrets.ACCOUNT }}
-         mi_password: ${{ secrets.PASSWORD }}
-        run: python miui.py 
+         yyusername: ${{ secrets.YYUSERNAME }}
+         yypassword: ${{ secrets.YYPASSWORD }}
+        
+        run: python yysign.py  # 你需要根据你实际情况替换 <your_script>
+
+
+        
+
+      # - name: Install dependencies
+      #   run: pip install pycryptodome
+      # - name: Run script
+      #   env:
+      #    mi_account: ${{ secrets.ACCOUNT }}
+      #    mi_password: ${{ secrets.PASSWORD }}
+      #   run: python miui.py 
