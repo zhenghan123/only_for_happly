@@ -19,8 +19,8 @@ jobs:
         with:
          python-version: 3.7
 
-      # - name: Install dependencies
-      #   run: pip install requests  # 根据你的实际情况添加需要的依赖
+      - name: Install dependencies
+        run: pip install requests  # 根据你的实际情况添加需要的依赖
       # - name: Run script
       #   env:
       #    ikuuu: ${{ secrets.IKUUU }}
