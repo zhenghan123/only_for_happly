@@ -33,3 +33,10 @@ jobs:
         run: python yysign.py
         continue-on-error: true
         timeout-minutes: 10
+
+      - name: Run aliyun.py
+        env:
+          ali_refresh_token: ${{ secrets.REFRESH_TOKEN }}
+        run: python aliyun.py 
+        continue-on-error: true
+        timeout-minutes: 10
