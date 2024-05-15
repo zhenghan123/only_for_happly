@@ -37,6 +37,7 @@ jobs:
       - name: Run aliyun.py
         env:
           ali_refresh_token: ${{ secrets.REFRESH_TOKEN }}
+          plustoken: ${{ secrets.PLUSTOKEN }}
         run: python aliyun.py 
         continue-on-error: true
         timeout-minutes: 10
