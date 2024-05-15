@@ -49,3 +49,12 @@ jobs:
         run: python kuake.py 
         continue-on-error: true
         timeout-minutes: 10
+
+        
+      - name: Run kjwj.py
+        env:
+          kjwj_username: ${{ secrets.KJWJ_USERNAME }}
+          kjwj_password: ${{ secrets.KJWJ_PASSWORD }}
+        run: python kjwj.py 
+        continue-on-error: true
+        timeout-minutes: 10
