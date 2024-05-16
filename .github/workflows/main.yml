@@ -1,7 +1,7 @@
 name: 'Automated script run'
 on:
   schedule:
-    - cron:  '59 23 * * *' # 每日23:59运行
+    - cron:  '00 23 * * *' # 每日23:59运行
   workflow_dispatch:  # 允许手动触发
 
 jobs:
@@ -37,7 +37,7 @@ jobs:
       - name: Run aliyun.py
         env:
           ali_refresh_token: ${{ secrets.REFRESH_TOKEN }}
-          plustoken: ${{ secrets.PLUSTOKEN }}
+          #plustoken: ${{ secrets.PLUSTOKEN }}
         run: python aliyun.py 
         continue-on-error: true
         timeout-minutes: 10
@@ -45,7 +45,7 @@ jobs:
       - name: Run kuake.py
         env:
           COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
-          plustoken: ${{ secrets.PLUSTOKEN }}
+         # plustoken: ${{ secrets.PLUSTOKEN }}
         run: python kuake.py 
         continue-on-error: true
         timeout-minutes: 10
