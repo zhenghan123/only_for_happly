@@ -58,7 +58,10 @@ jobs:
         run: python kjwj.py 
         continue-on-error: true
         timeout-minutes: 10
-
+        
+      - name: Install dependencies
+        run: pip install rsa
+        
       - name: Run tyyun.py
         env:
           ty_username: ${{ secrets.TY_USERNAME }}
