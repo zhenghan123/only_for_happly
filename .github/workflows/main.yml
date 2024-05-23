@@ -58,3 +58,11 @@ jobs:
         run: python kjwj.py 
         continue-on-error: true
         timeout-minutes: 10
+
+      - name: Run tyyun.py
+        env:
+          ty_username: ${{ secrets.TY_USERNAME }}
+          ty_password: ${{ secrets.TY_PASSWORD }}
+        run: python tyyun.py 
+        continue-on-error: true
+        timeout-minutes: 10
