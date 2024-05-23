@@ -1,7 +1,6 @@
-name: 'Automated script run'
+name: 'new run'
 on:
-  schedule:
-    - cron:  '00 23 * * *' # 每日23:59运行
+
   workflow_dispatch:  # 允许手动触发
 
 jobs:
@@ -18,54 +17,62 @@ jobs:
 
       - name: Install dependencies
         run: pip install requests
+
+      - name: Run miui.py
+        env:
+          mi_account: ${{ secrets.MI_ACCOUNT }}
+          mi_password: ${{ secrets.MI_PASSWORD }}
+        run: python miui.py
+        continue-on-error: true
+        timeout-minutes: 10
         
-      - name: Run ikuuu2.py
-        env:
-          ikuuu: ${{ secrets.IKUUU }}
-        run: python ikuuu2.py 
-        continue-on-error: true
-        timeout-minutes: 10
+      # - name: Run ikuuu2.py
+      #   env:
+      #     ikuuu: ${{ secrets.IKUUU }}
+      #   run: python ikuuu2.py 
+      #   continue-on-error: true
+      #   timeout-minutes: 10
 
-      - name: Run yysign.py
-        env:
-          yyusername: ${{ secrets.YYUSERNAME }}
-          yypassword: ${{ secrets.YYPASSWORD }}
-        run: python yysign.py
-        continue-on-error: true
-        timeout-minutes: 10
+      # - name: Run yysign.py
+      #   env:
+      #     yyusername: ${{ secrets.YYUSERNAME }}
+      #     yypassword: ${{ secrets.YYPASSWORD }}
+      #   run: python yysign.py
+      #   continue-on-error: true
+      #   timeout-minutes: 10
 
-      - name: Run aliyun.py
-        env:
-          ali_refresh_token: ${{ secrets.REFRESH_TOKEN }}
-          #plustoken: ${{ secrets.PLUSTOKEN }}
-        run: python aliyun.py 
-        continue-on-error: true
-        timeout-minutes: 10
+      # - name: Run aliyun.py
+      #   env:
+      #     ali_refresh_token: ${{ secrets.REFRESH_TOKEN }}
+      #     #plustoken: ${{ secrets.PLUSTOKEN }}
+      #   run: python aliyun.py 
+      #   continue-on-error: true
+      #   timeout-minutes: 10
     
-      - name: Run kuake.py
-        env:
-          COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
-         # plustoken: ${{ secrets.PLUSTOKEN }}
-        run: python kuake.py 
-        continue-on-error: true
-        timeout-minutes: 10
+      # - name: Run kuake.py
+      #   env:
+      #     COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
+      #    # plustoken: ${{ secrets.PLUSTOKEN }}
+      #   run: python kuake.py 
+      #   continue-on-error: true
+      #   timeout-minutes: 10
 
         
-      - name: Run kjwj.py
-        env:
-          kjwj_username: ${{ secrets.KJWJ_USERNAME }}
-          kjwj_password: ${{ secrets.KJWJ_PASSWORD }}
-        run: python kjwj.py 
-        continue-on-error: true
-        timeout-minutes: 10
+      # - name: Run kjwj.py
+      #   env:
+      #     kjwj_username: ${{ secrets.KJWJ_USERNAME }}
+      #     kjwj_password: ${{ secrets.KJWJ_PASSWORD }}
+      #   run: python kjwj.py 
+      #   continue-on-error: true
+      #   timeout-minutes: 10
         
-      - name: Install dependencies
-        run: pip install rsa
+      # - name: Install dependencies
+      #   run: pip install rsa
         
-      - name: Run tyyun.py
-        env:
-          ty_username: ${{ secrets.TY_USERNAME }}
-          ty_password: ${{ secrets.TY_PASSWORD }}
-        run: python tyyun.py 
-        continue-on-error: true
-        timeout-minutes: 10
+      # - name: Run tyyun.py
+      #   env:
+      #     ty_username: ${{ secrets.TY_USERNAME }}
+      #     ty_password: ${{ secrets.TY_PASSWORD }}
+      #   run: python tyyun.py 
+      #   continue-on-error: true
+      #   timeout-minutes: 10
