@@ -1,7 +1,7 @@
 name: 'Automated script run'
 on:
   schedule:
-    - cron:  '00 23 * * *' # 每日23:59运行
+    - cron:  '00 17 * * *' # 每日23:59运行
   workflow_dispatch:  # 允许手动触发
 
 jobs:
