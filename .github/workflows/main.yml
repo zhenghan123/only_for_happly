@@ -42,13 +42,13 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
     
-      - name: Run kuake.py
-        env:
-          COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
-         # plustoken: ${{ secrets.PLUSTOKEN }}
-        run: python kuake.py 
-        continue-on-error: true
-        timeout-minutes: 10
+      # - name: Run kuake.py
+      #   env:
+      #     COOKIE_QUARK: ${{ secrets.COOKIE_QUARK }}
+      #    # plustoken: ${{ secrets.PLUSTOKEN }}
+      #   run: python kuake.py 
+      #   continue-on-error: true
+      #   timeout-minutes: 10
 
         
       - name: Run kjwj.py
